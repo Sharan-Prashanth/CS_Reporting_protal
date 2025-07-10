@@ -21,6 +21,7 @@ function EmployeeDashboard() {
     try {
       setLoading(true);
       const res = await axios.get(`http://localhost:5000/api/feedback/assigned/${employeeId}`);
+      //console.log('Assignments fetched:', res);
       setAssignments(res.data);
       setError(null);
     } catch (err) {
@@ -75,7 +76,6 @@ function EmployeeDashboard() {
         <p><strong>Message:</strong> {assignment.message}</p>
         <p><strong>Status:</strong> <span className={`status ${assignment.status.toLowerCase()}`}>{assignment.status}</span></p>
         <p><strong>Tracking Key:</strong> {assignment.tracking_key}</p>
-        <p><strong>PR Number:</strong> {assignment.pr_number}</p>
         {assignment.file && (
           <div className="file-attachment">
             <strong>Attachment:</strong>

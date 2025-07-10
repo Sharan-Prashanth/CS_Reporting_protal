@@ -151,7 +151,6 @@ exports.getAssignmentsForEmployee = (req, res) => {
       f.category,
       f.file,
       f.tracking_key,
-      f.pr_number,
       f.status,
       u.name as user_name,
       f.created_at,
