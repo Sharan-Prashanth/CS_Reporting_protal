@@ -42,6 +42,9 @@ const asyncHandler = (fn) => (req, res, next) => {
 router.get('/', asyncHandler(feedbackController.getAllFeedbacks));
 router.get('/tracking/:tracking_key', asyncHandler(feedbackController.getFeedbackByTrackingKey));
 router.get('/user/:user_id', asyncHandler(feedbackController.getUserFeedbacks));
+
+router.get('/category/:category', asyncHandler(feedbackController.getFeedbackByCategory));
+
 router.get('/assigned/:employee_id', asyncHandler(feedbackController.getAssignmentsForEmployee));
 router.get('/assigned/all', asyncHandler(feedbackController.getAllAssignedFeedbacks));
 router.get('/responses/pending', asyncHandler(feedbackController.getPendingResponses));
